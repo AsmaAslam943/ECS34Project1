@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/homebrew/include/googletest", 
-                "/users/asmaaslam/ECS34Project1/proj1/include"
+                "/users/asmaaslam/ECS34Project1/proj1/include/"
             ],
             "defines": [],
             "macFrameworkPath": [

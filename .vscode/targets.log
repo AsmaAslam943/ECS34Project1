@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Jan 31 04:17:10 2025
+# Make data base, printed on Fri Jan 31 04:40:55 2025
 
 # Variables
 
@@ -34,10 +34,7 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/private/var/folders/bs/nk802mhn14q2h8v1c5tjg2r40000gn/T/AppTranslocation/09F72999-024E-41CD-A8E2-F2D0E0EB66F7/d/Visual Studio Code.app/Contents/Resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}
 # environment
 _ = /usr/bin/make
-# environment
-VSCODE_PID = 1134
 # makefile
- 
 MAKEFILE_LIST := 
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
@@ -49,8 +46,6 @@ VSCODE_CWD = /
 GSETTINGS_SCHEMA_DIR = /opt/anaconda3/share/glib-2.0/schemas
 # environment
 PATH = /opt/anaconda3/bin:/opt/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin
-# environment
-VSCODE_DOTNET_INSTALL_TOOL_ORIGINAL_HOME = /Users/asmaaslam
 # environment
 LaunchInstanceID = 546B75FA-6A5D-458F-AE55-214A8FC2A088
 # environment
@@ -82,7 +77,7 @@ VSCODE_CODE_CACHE_PATH = /Users/asmaaslam/Library/Application Support/Code/Cache
 # environment
 LOGNAME = asmaaslam
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 CONDA_PROMPT_MODIFIER = (base) 
 # environment
@@ -164,16 +159,15 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /opt/anaconda3
 # environment
-APPLICATIONINSIGHTS_CONFIGURATION_CONTENT = {}
+VSCODE_PID = 1134
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=3/97=3%
+# Load=74/1024=7%, Rehash=0, Collisions=2/95=2%
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
- 
 
 # Directories
 
@@ -251,6 +245,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Jan 31 04:17:10 2025
+# Finished Make data base on Fri Jan 31 04:40:55 2025
 
  
