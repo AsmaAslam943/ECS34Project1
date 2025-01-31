@@ -33,13 +33,15 @@ std::string Capitalize(const std::string &str) noexcept{
 }
 
 std::string Upper(const std::string &str) noexcept{
-    std:: string up; //initialize a variable called up 
+    int i =0;  //initialize a variable called up 
     for (char c: str ){ 
-        if (std::isupper(static_cast<unsigned char>(c))){ //iterate through and we check if it is upper 
-            up += c;
+        while (str[i]){ //iterate through and we check if it is upper 
+            c = str[i]; 
+            putchar (toupper(i)); 
+            i++; 
         }
     }
-   return up; //if so then we return the uppercase elements 
+   return 0; //if so then we return the uppercase elements 
 
 }
 
