@@ -44,10 +44,9 @@ std::string Upper(const std::string &str) noexcept{
 
 std::string Lower(const std::string &str) noexcept{
     std:: string lower; //establish string lower
+    lower.reserve(str.size()); 
     for (char c: str){ //iterate through 
-        if (std:: tolower(static_cast<unsigned char> (c))){ //utilized islower from the website and check which letterare lower 
-            lower += c;
-       }
+        lower += std::tolower(static_cast<unsigned char>(c)); 
    }
    return lower; //return all lowercased letters 
 }
