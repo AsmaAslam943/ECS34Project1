@@ -45,7 +45,7 @@ std::string Upper(const std::string &str) noexcept{
 std::string Lower(const std::string &str) noexcept{
     std:: string lower; //establish string lower
     for (char c: str){ //iterate through 
-        if (std:: islower(static_cast<unsigned char> (c))){ //utilized islower from the website and check which letterare lower 
+        if (std:: tolower(static_cast<unsigned char> (c))){ //utilized islower from the website and check which letterare lower 
             lower += c;
        }
    }
