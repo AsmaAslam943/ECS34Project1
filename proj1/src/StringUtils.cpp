@@ -97,7 +97,7 @@ std::string RJust(const std::string &str, int width, char fill) noexcept{
     if ((str.size() >= width)){ //bounds checking else return string 
        return str;
    }
-   return str + std::string(width-str.size(), fill); //this would simply return the strin + a new string of number of spaces  
+   return std::string(width-str.size(), fill) + str; //this would simply return the strin + a new string of number of spaces  
    //found the fill function via the webstie 
 }
 
