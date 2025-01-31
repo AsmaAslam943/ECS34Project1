@@ -34,9 +34,9 @@ std::string Capitalize(const std::string &str) noexcept{
 
 std::string Upper(const std::string &str) noexcept{
     std::string up;  //initialize a variable called up 
-    up.reserve(str.size()); 
+    up.reserve(str.size()); //i found reerve off the website 
     for (char c: str ){ 
-        up += std::toupper(static_cast<unsigned char>(c)); 
+        up += std::toupper(static_cast<unsigned char>(c)); //we need to assign up to make sure std::toupper converts all unsigned character to uppercase 
     }
    return up; //if so then we return the uppercase elements 
 
@@ -44,9 +44,9 @@ std::string Upper(const std::string &str) noexcept{
 
 std::string Lower(const std::string &str) noexcept{
     std:: string lower; //establish string lower
-    lower.reserve(str.size()); 
+    lower.reserve(str.size()); //need to ensure size of string stays same 
     for (char c: str){ //iterate through 
-        lower += std::tolower(static_cast<unsigned char>(c)); 
+        lower += std::tolower(static_cast<unsigned char>(c)); //again, we used std::tolower to convert everything to lowercase
    }
    return lower; //return all lowercased letters 
 }
@@ -74,10 +74,13 @@ std::string Strip(const std::string &str) noexcept{
 }
 
 std::string Center(const std::string &str, int width, char fill) noexcept{
-    if ((str.size() >= width)){ //if width less than or equal to size 
+    if ((str.size() >= static_cast<size_t> (width))){ //if width less than or equal to size 
         return str;
-    } //then we have to return the 
-    return str + std::string(((width - str.size())/2), fill) + std::string(((width - str.size()/2) - (width - str.size())), fill);
+    } //
+    int total = width -str.size(); 
+    int left = total / 2; 
+    int r = total - left; 
+    return str + std::string(left, fill) + std::string(r, fill);
 }
 
 std::string LJust(const std::string &str, int width, char fill) noexcept{
