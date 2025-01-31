@@ -168,31 +168,6 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
 
     std:: vector<std::vector<int>> dp(l + 1, std::vector<int>(r+1)); //create a vector that calls on the 
     
-    for (size_t i = 0; i <= l; ++i){ //we iterate through the "left" side 
-        for (size_t j = 0; j <= r; ++i){ //next we iterate through the "Right" side 
-            if (i == 0){ //if i is equal to 0 then we overwrite to j 
-                dp[i][j] = j; 
-            }
-            if (j == 0){ //same goes for if j == 0 
-                dp[i][j] = i; 
-            } if (i != 0 | j != 0){ //however if both are not null or equal to 0 then we can find the character 
-                char charleft = left[i-1]; //through using indexing we grab "left character" and right character 
-                char charright = right[j-1]; 
-                if (ignorecase){
-                    charleft = std::tolower((charleft)); 
-                    charright = std::tolower((charright)); 
-                }
-                if (charleft == charright){
-                    dp[i][j] = dp[i-1][j-1]; 
-                } else{
-                    dp[i][j] = 1 + std::min(dp[i-1][j], dp[i][j-1], dp[j-1][i-1]); 
-                
-                }
-            }
-        }
-
-    }
-    return dp[l][r]; 
 
 }
 
