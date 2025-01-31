@@ -62,7 +62,7 @@ std::string LStrip(const std::string &str) noexcept{
 
 std::string RStrip(const std::string &str) noexcept{
     size_t ind = str.length(); //we want to capture string's full length 
-    while (ind < str.length() && std::isspace(static_cast<unsigned char>(str[ind - 1]))){
+    while (ind > 0 && std::isspace(static_cast<unsigned char>(str[ind - 1]))){
         ind--; //using isspace we extract the spaces 
    }
    return str.substr(0, ind); //substrip the 0 to index to return the string 
@@ -76,7 +76,7 @@ std::string Strip(const std::string &str) noexcept{
 std::string Center(const std::string &str, int width, char fill) noexcept{
     if ((str.size() >=  (width))){ //if width less than or equal to size 
         return str;
-    } //
+    } 
     int total = width -str.size(); 
     int left = total/2; 
     std::string final(left,fill); 
