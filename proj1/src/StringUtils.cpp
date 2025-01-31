@@ -81,7 +81,7 @@ std::string Center(const std::string &str, int width, char fill) noexcept{
     int left = total/2; 
     std::string final(left,fill); 
     final += str; 
-    final.append(total, fill ); 
+    final.append(total-left, fill ); 
     return final; 
 
 }
