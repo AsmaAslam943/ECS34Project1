@@ -192,9 +192,9 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
                 } else{
                     cost = 1; 
                 }
-                int remove = dp[i-1][j] +1; 
-                int insert = dp[i][j-1] + 1; 
-                int replacement = dp[i-1][j-1] +1; 
+                int remove = dp[i-1][j] ; 
+                int insert = dp[i][j-1] ; 
+                int replacement = dp[i-1][j-1]; 
 
                 dp[i][j] = std::min({remove, insert,replacement});
             }
