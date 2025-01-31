@@ -78,14 +78,12 @@ std::string Center(const std::string &str, int width, char fill) noexcept{
         return str;
     } //
     int total = width -str.size(); 
-    int left = total/2 ; 
-    std::string final(left, fill); 
+    int left = total/2; 
+    std::string final(left,fill); 
     final += str; 
-
-    int left = total / 2; 
-    int r = total - left; 
-    final.append(total, fill); 
+    final.append(total, fill ); 
     return final; 
+
 }
 
 std::string LJust(const std::string &str, int width, char fill) noexcept{
