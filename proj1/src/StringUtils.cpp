@@ -130,11 +130,16 @@ std::vector< std::string > Split(const std::string &str, const std::string &splt
 
 
 std::string Join(const std::string &str, const std::vector< std::string > &vect) noexcept{
-    std:: string stri = str; //intialize string 
-    for (const auto& str: vect){
-        stri += str; //iterate vect to string 
+    if (vect.empty()) return; 
+
+    std:: string result; //intialize string 
+    for (size_t index = 0; index < vect.size(); ++index){
+        result += vect[index]; //iterate vect to string 
+        if (index < vect.size()-1){
+            result += str; 
+        }
     }
-    return stri; //outputs a string 
+    return result; //outputs a string 
 
 }
 
