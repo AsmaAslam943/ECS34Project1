@@ -167,13 +167,32 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 }
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ 
-    size_t l = left.size(); 
-    size_t r = right.size(); 
+    std::string A; 
+    std::string B; 
 
-    std::vector<std::vector<int>> dp(l+1, std::vector<int>(r+1)); 
+    if (ignorecase == true){
+        A = Upper(left); 
+        B = Upper(right); 
+    } else{
+        A = left; 
+        B = right; 
+    }
+    if(A.empty() == true){
+        return int(B.length()); 
+    } else if (B.empty()==true){
+        return int(A.length()); 
+    } else if (A[0] == B[0]){
+        return EditDistance(Slice(A,1,0), Slice(B,1,0)); 
+    }
     
-    
-    return 0; 
+    std::vector<int> distance = {EditDistance(Slice(A,1,0),B), EditDistance(A,Slice(B,1,0)), EditDistance(Slice(A,1,0), Slice(B,1,0))}; 
+    int minimum = distance[0]; 
+    for (int i = 1; i < distance.size(); ++i){
+        if (distance[i]<minimum){
+            minimum = distance[i]; 
+        }
+    }
+    return 1+minimum; 
 }
 
 };
