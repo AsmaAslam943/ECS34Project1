@@ -164,8 +164,6 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ 
     //insert code
-    return; 
-
 }
 
 };
