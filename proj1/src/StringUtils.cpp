@@ -74,13 +74,18 @@ std::string Strip(const std::string &str) noexcept{
 }
 
 std::string Center(const std::string &str, int width, char fill) noexcept{
-    if ((str.size() >= static_cast<size_t> (width))){ //if width less than or equal to size 
+    if ((str.size() >=  (width))){ //if width less than or equal to size 
         return str;
     } //
     int total = width -str.size(); 
+    int left = total/2 ; 
+    std::string final(left, fill); 
+    final += str; 
+
     int left = total / 2; 
     int r = total - left; 
-    return str + std::string(left, fill) + std::string(r, fill);
+    final.append(total, fill); 
+    return final; 
 }
 
 std::string LJust(const std::string &str, int width, char fill) noexcept{
