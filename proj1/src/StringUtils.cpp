@@ -150,9 +150,13 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
     int ind = 0; //index is set to 0 
     for (char c: str){ //iterate thru 
         if (c == '\t'){ //base case --> if c is some tab 
-            int sp = tabsize - (ind % tabsize); //then we initialize space which subtracts index mod tabsize 
-            output += std::string(sp,' '); //this just updates output 
-            ind += sp; //index also takes in numerical value of space s
+            if (tabsize == 0){
+                continue; 
+            } else {
+                int sp = tabsize - (ind % tabsize); //then we initialize space which subtracts index mod tabsize 
+                output += std::string(sp,' '); //this just updates output 
+                ind += sp; //index also takes in numerical value of space s
+            }
         } else {
             output += c;//output results with the characters // string output 
             ind++; //index grows 
@@ -163,7 +167,10 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 }
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ 
-    //insert code
+    size_t l= left.size(); 
+    size_t r = right.size(); 
+
+    std::vector<std::vector<int>> dp(l + 1, std::vector<int>(r+1)); 
     return 0; 
 }
 
