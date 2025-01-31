@@ -196,8 +196,7 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
                 int insert = dp[i][j-1] + 1; 
                 int replacement = dp[i-1][j-1] +1; 
 
-                dp[i][j] = std::min({remove, insert,replacement}); 
-
+                dp[i][j] = std::min({remove, insert,replacement});
             }
         }
     }
