@@ -121,12 +121,12 @@ std::string Replace(const std::string &str, const std::string &old, const std::s
 
 std::vector< std::string > Split(const std::string &str, const std::string &splt) noexcept{
     size_t index = 0; //initialize an index 
-    size_t end = str.find_first_of(splt); //found find_first of in the website 
+    size_t end = str.find(splt); //found find_first of in the website 
     std::vector<std::string> output; //needed to create a vector output 
     while (end != std:: string::npos){ //checks until no delimiter found 
         output.emplace_back(str.substr(index, end-index)); //this gets substring for us 
-        index = end +1; //index continues to iterate thru 
-        end = str.find_first_of(splt, index); //find the next char 
+        index = end +splt.length(); //index continues to iterate thru 
+        end = str.find(splt, index); //find the next char 
     }
     output.emplace_back(str.substr(index)); //inputs final part of string 
     return output;
@@ -164,6 +164,7 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ 
     //insert code
+    return 0; 
 }
 
 };
