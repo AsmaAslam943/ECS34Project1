@@ -188,7 +188,7 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
                 if (charleft == charright){
                     dp[i][j] = dp[i-1][j-1]; 
                 } else{
-                    dp[i][j] = 1 + std::min({dp[i-1][j], dp[i][j-1], dp[i-1][j-1]}); 
+                    dp[i][j] = 1 + std::min({dp[i-1][j],dp[i][j-1],dp[i-1][j-1]}, [](int a, int b){return a > b;}); 
 
                 }
             }
