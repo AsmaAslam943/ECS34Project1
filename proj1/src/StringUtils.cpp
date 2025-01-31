@@ -97,7 +97,7 @@ std::string RJust(const std::string &str, int width, char fill) noexcept{
     if ((str.size() >= width)){ //bounds checking else return string 
        return str;
    }
-   return str + std::string(width-str.size(), fill); //this would simply return the strin + a new string of number of spaces  
+   return std::string(width-str.size(), fill)+str; //this would simply return the strin + a new string of number of spaces  
    //found the fill function via the webstie 
 }
 
@@ -163,11 +163,6 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 }
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ //I tried using the "pretty printing approach" from 122a to grab through with each element and compare
-    size_t l = left.size(); //need to initialize a left and right 
-    size_t r = right.size(); 
-
-    std:: vector<std::vector<int>> dp(l + 1, std::vector<int>(r+1)); //create a vector that calls on the 
-    
 
 }
 
