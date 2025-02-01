@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "StringUtils.h"
-
+//NOTE: I used my 32C Professor's notes to reference the EXPECT_EQ 
 TEST(StringUtilsTest, SliceTest){
     std::string result = StringUtils::Slice("Asma Aslam", 5,10);
     EXPECT_EQ(result, "Aslam");

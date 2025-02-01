@@ -1,8 +1,7 @@
 # ECS34Project1
 
 Throughout the course of this project, I did use the website and the resources that the professor provided me. 
-
-
+However, for the test cases that I wrote, I referenced my ECS 32C professor's test cases and learned about the EXPECT_EQ from there. That is why I implemented it like this. 
 
 The professor provided us with a website, which I found helpful throughout the course of this assignment. 
 
