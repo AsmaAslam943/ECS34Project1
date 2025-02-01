@@ -198,10 +198,11 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
             int ins = dp[i][j-1]+1; 
             int sub = dp[i-1][j-1]+cost; 
 
-            dp[i][j]=std::min({del,ins,sub}); 
+            dp[i][j]=std::min({del,ins,sub});
         }
 
     }
+    return dp[l][r]; 
 
 }
 }; 
