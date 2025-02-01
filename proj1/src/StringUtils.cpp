@@ -126,7 +126,7 @@ std::vector< std::string > Split(const std::string &str, const std::string &splt
     while (end != std:: string::npos){ //checks until no delimiter found 
         output.emplace_back(str.substr(index, end-index)); //this gets substring for us 
         index = end +splt.length(); //index continues to iterate thru 
-        end = str.find(splt, index); //find the next char 
+        size_t end = str.find_first_of(" \t\n"); //find the next char 
     }
     output.emplace_back(str.substr(index)); //inputs final part of string 
     return output;
@@ -170,19 +170,19 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
     std::string l; 
     std::string rt; 
 
-    if (ignorecase == true){
+    if (ignorecase){
         l = Upper(left); 
         rt = Upper(right); 
     } else{
         l = left; 
         rt = right; 
     }
-    if(l.empty() == true){
+    if(l.empty()){
         return int(rt.length()); 
-    } else if (rt.empty()==true){
+    } else if (rt.empty()){
         return int(l.length()); 
     } else if (l[0] == rt[0]){
-        return EditDistance(Slice(l,1,0), Slice(rt,1,0)); 
+        return EditDistance(Slice(l,1,0), Slice(rt,1,0),ignorecase); 
     }
     
     std::vector<int> distance = {EditDistance(Slice(l,1,0),rt), EditDistance(l,Slice(rt,1,0)), EditDistance(Slice(l,1,0), Slice(rt,1,0))}; 
