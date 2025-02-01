@@ -167,65 +167,25 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 }
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ 
-    size_t l = left.size(); 
-    size_t r = right.size(); 
-
-    std::vector<std::vector<int>> dp(l+1, std::vector<int>(r+1)); 
-    for (size_t i = 0; i <= l; ++i){
-        dp[i][0] = i; 
-    }
-    for (size_t j = 0; j <= r; ++j){
-        dp[0][j]=j; 
-    }
-
-    for (size_t i = 1; i <= l; ++i){
-        for (size_t j = 1; j <= r; ++j){
-            char chrleft = left[i-1]; 
-            char chrrt = right[j-1]; 
-
-            if (ignorecase){
-                chrleft = std::tolower(chrleft); 
-                chrrt = std::tolower(chrrt); 
-            }
-            int cost; 
-            if (chrleft == chrrt){
-                cost = 0; 
-            } else{
-                cost = 1; 
-            }
-
-            int del = dp[i-1][j]+1; 
-            int ins = dp[i][j-1]+1; 
-            int sub = dp[i-1][j-1]+cost; 
-
-            dp[i][j]=std::min({del,ins,sub});
-        }
-
-    }
-    return dp[l][r]; 
-
-}
-}; 
-/*
-    std::string A; 
-    std::string B; 
+    std::string l; 
+    std::string rt; 
 
     if (ignorecase == true){
-        A = Upper(left); 
-        B = Upper(right); 
+        l = Upper(left); 
+        rt = Upper(right); 
     } else{
-        A = left; 
-        B = right; 
+        l = left; 
+        rt = right; 
     }
-    if(A.empty() == true){
-        return int(B.length()); 
-    } else if (B.empty()==true){
-        return int(A.length()); 
-    } else if (A[0] == B[0]){
-        return EditDistance(Slice(A,1,0), Slice(B,1,0)); 
+    if(l.empty() == true){
+        return int(rt.length()); 
+    } else if (rt.empty()==true){
+        return int(l.length()); 
+    } else if (l[0] == rt[0]){
+        return EditDistance(Slice(l,1,0), Slice(rt,1,0)); 
     }
     
-    std::vector<int> distance = {EditDistance(Slice(A,1,0),B), EditDistance(A,Slice(B,1,0)), EditDistance(Slice(A,1,0), Slice(B,1,0))}; 
+    std::vector<int> distance = {EditDistance(Slice(l,1,0),rt), EditDistance(l,Slice(rt,1,0)), EditDistance(Slice(l,1,0), Slice(rt,1,0))}; 
     int minimum = distance[0]; 
     for (int i = 1; i < distance.size(); ++i){
         if (distance[i]<minimum){
@@ -235,4 +195,4 @@ int EditDistance(const std::string &left, const std::string &right, bool ignorec
     return 1+minimum; 
 }
 
-}; */
+}; 
