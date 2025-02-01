@@ -124,9 +124,9 @@ std::vector< std::string > Split(const std::string &str, const std::string &splt
     size_t end = str.find(splt); //found find_first of in the website 
     std::vector<std::string> output; //needed to create a vector output 
     while (end != std:: string::npos){ //checks until no delimiter found 
-        output.emplace_back(str.substr(index, end-index)); //this gets substring for us 
+        output.push_back(str.substr(index, end-index)); //this gets substring for us 
         index = end +splt.length(); //index continues to iterate thru 
-        size_t end = str.find(splt,index); //find the next char 
+        end = str.find(splt,index); //find the next char 
     }
     output.emplace_back(str.substr(index)); //inputs final part of string 
     return output;
