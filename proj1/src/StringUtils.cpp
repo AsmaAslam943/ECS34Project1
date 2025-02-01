@@ -126,7 +126,7 @@ std::vector< std::string > Split(const std::string &str, const std::string &splt
     while (end != std:: string::npos){ //checks until no delimiter found 
         output.emplace_back(str.substr(index, end-index)); //this gets substring for us 
         index = end +splt.length(); //index continues to iterate thru 
-        size_t end = str.find_first_of(" \t\n"); //find the next char 
+        size_t end = str.find(splt,index); //find the next char 
     }
     output.emplace_back(str.substr(index)); //inputs final part of string 
     return output;
@@ -167,21 +167,21 @@ std::string ExpandTabs(const std::string &str, int tabsize) noexcept{
 }
 
 int EditDistance(const std::string &left, const std::string &right, bool ignorecase) noexcept{ 
-    std::string l; 
+    std::string l; //need to initialize a "left side" and a "right"
     std::string rt; 
 
-    if (ignorecase){
-        l = Upper(left); 
+    if (ignorecase){ //if its false then 
+        l = Upper(left); //begin by uppercasing both --> called on the upper function 
         rt = Upper(right); 
-    } else{
+    } else{ //otherwise stays same 
         l = left; 
         rt = right; 
     }
-    if(l.empty()){
+    if(l.empty()){ //if the left is empty then we return the integer value of the right 
         return int(rt.length()); 
-    } else if (rt.empty()){
+    } else if (rt.empty()){ //vise versa; if the right is empty then return integer value of the left 
         return int(l.length()); 
-    } else if (l[0] == rt[0]){
+    } else if (l[0] == rt[0]){ //if we have the same length then u call on EditDistance to slice through 
         return EditDistance(Slice(l,1,0), Slice(rt,1,0),ignorecase); 
     }
     
